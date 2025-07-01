@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    }
+    .header{
+        /* padding:15px 30px; */
+        /* background-color:rgb(117, 160, 160); */
+    }
+    .navbar{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:15px 30px;
+        background-color:rgb(117, 160, 160);
+    }
+
+    .navlinks li a{
+        text-decoration:none;
+        color:rgb(8, 99, 99);
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight: 600;
+    }
+    li:hover{
+        background-color:white;
+        border-radius:4px;
+    }
+    
+    .navlinks li{
+        list-style-type: none;
+        display:inline;
+        padding:12px 14px;
+        
+    }
+    .banner img{
+        object-fit:contain;
+        overflow:hidden;
+    }
+    .hero{
+        background-color:lightgrey 
+    }
+    .banner{
+        display:flex;
+        justify-content:center;
+        padding:20px;
+    }
+    .search-bar{
+        display:flex;
+        justify-content:center;
+        position:relative;
+    }
+    .search-bar input{
+        border-radius:5px;
+        padding:5px;
+        padding-right:20px;
+        
+    }
+    
+    .search_icon{
+     position:absolute;
+     /* z-index:5 */
+     left:62%;
+     top:10%
+
+    }
+    .shop_btn{
+        text-align: center;
+        padding:12px 24px;
+        display:inline-block;
+        border:2px solid red;
+        background-color: red;
+       color:white;
+       font-weight:bold;
+       border-radius:8px;
+       /* transition:background 0.3s ease; */
+    }
+    .shop_btn a{
+      text-decoration:none;
+      color:white;
+    }
+</style>
+<body>
+    <div class="main">
+    <header class="header">
+       <div class="navbar">
+        <div class="icon">
+            <img src="icon.svg" alt="company's logo" width="50" height="50">
+        </div>
+        <ul class="navlinks">
+        <li><a href="loginsignup.html">Login/Signup</a></li>
+    
+        <li><a href="home.html">Home</a></li>
+       <li> <a href="products.html">Products</a></li>
+        </ul>
+    <div class="cart_icon"><img src="cart.png" alt=""></div>
+       </div>
+    </header>
+    <section class="hero">
+    <div class="banner"><img src="banner.jpg" alt="banner"></div>
+    <div class="shop_btn">
+    <a href="products.html" class="cta-button">Shop Now</a>
+</div>
+    <div class="search-bar">
+        <input type="text" placeholder="search the product" class="search_bar_input">
+        <img src="search.png" alt="search's icon" height="20" class="search_icon">
+    </div>
+    <br>
+    
+    </div>
+</section>
+</body>
+</html>

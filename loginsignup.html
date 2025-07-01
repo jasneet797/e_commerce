@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .form-all {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-sub-login, .form-sub-signup{
+      background-color: darkcyan;
+      height: 80%;
+      width: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      border-radius: 8px;
+    }
+    .form-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      gap: 50px;
+      text-align: center;
+    }
+    .form-input input {
+      padding: 5px;
+      margin: 5px;
+      border:none;
+      outline:none;
+    }
+    .form-input-signup input {
+      padding: 5px;
+      margin: 5px;
+      border:none;
+      outline:none;
+    
+    }
+    .hidden{
+      display:none
+    }
+    .form-item{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+  </style>
+  <body>
+    <div class="form-all">
+<!-- Login -->
+      <div class="form-sub-login">
+        <form action="" class="form-content">
+          <h1>Login</h1>
+          <div class="form-input">
+            <label for="name"></label>
+            <input
+              type="text"
+              class="name"
+              placeholder="Enter your username"
+            /><br />
+            <label for="password"></label>
+            <input type="password" placeholder="Enter your password" />
+          </div>
+          <p>Dont have an account <a href="#" onclick="toggleform('signup')">Sign up</a></p>
+        </form>
+      </div>
+<!-- Signup -->
+      <div class="form-sub-signup hidden">
+        <form action="" class="form-content">
+          <h1>Sign up</h1>
+          <div class="form-input-signup">
+            <div class="form-item">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              class="name"
+              placeholder="Enter your Name"
+            />
+        </div>
+        <div class="form-item">
+            <label for="email">Email</label>
+            <input type="email" placeholder="Enter your email" />
+        </div>
+        <div class="form-item">
+            <label for="age">Age</label>
+            <input type="age" placeholder="Enter your age" />
+        </div>
+        <button class="verify">Verify your email</button>
+        <div class="form-item">
+        <label for="password">Password</label>
+        <input type="password" placeholder="Set a strong password">
+        </div>
+        <div class="form-item">
+        <label for=""></label>
+        <input type="password" placeholder="Re-enter your password">
+        </div>
+        <p>Already have an account?<a href="#" onclick="toggleform('login')">Login</a></p>
+        </form>
+      </div>
+    </div>
+
+  <script>
+    function toggleform(formType){
+      const signup=document.getElementsByClassName("form-sub-signup")[0];
+      const login=document.getElementsByClassName("form-sub-login")[0]
+      if (!signup || !login) {
+    console.error("Signup or login element not found in the DOM.");
+    return;
+  }
+    if(formType ==='signup'){
+      login.classList.add('hidden');
+      signup.classList.remove('hidden')
+    }
+    else{
+     signup.classList.add('hidden');
+      login.classList.remove('hidden')
+    }
+  }
+  </script>
+    </body>
+</html>
