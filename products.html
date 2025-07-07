@@ -80,8 +80,12 @@
                 };
                 console.log("button clicked");
                 cart.push(product);
+                localStorage.setItem("cart",JSON.stringify(cart))
                 console.log("Cart:", cart);
                 // updateCartCount();
+                //Remove from cart functionality
+            
+
               });
             });
           });

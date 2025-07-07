@@ -1,13 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your cart</title>
-</head>
-<body>
+  </head>
+  <style>
+    #cart_items_container {
+      /* border: 2px solid black; */
+      padding: 12px 14px;
+    }
+    .cart-item {
+      margin: 5px;
+      display: flex;
+      /* flex-direction:column; */
+      border: 2px solid black;
+      padding: 12px 14px;
+      gap: 12px;
+    }
+    .cart-img {
+      width: 100px;
+    }
+  </style>
+  <body>
     <div id="cart_items_container">
-        
+      <div class="cart_itembox"></div>
+      <script>
+        const cartData = JSON.parse(localStorage.getItem("cart")) || [];
+        const container = document.getElementById("cart_items_container");
+        const cartItemBox = document.querySelector(".cart_itembox");
+
+        cartData.forEach((item) => {
+          const cartItem = document.createElement("div");
+          cartItem.classList.add("cart-item");
+
+          const img = document.createElement("img");
+          img.src = item.image;
+          img.alt = item.title;
+          img.classList.add("cart-img");
+          const details = document.createElement("div");
+          details.innerHTML = `<h3>${item.title}</h3><p>$${item.price}</p>`;
+
+          cartItem.appendChild(img);
+          cartItem.appendChild(details);
+
+          cartItemBox.appendChild(cartItem);
+        });
+        //Remove from cart functionality
+        // Create the remove button
+        const btn = document.createElement("button");
+        btn.textContent = "Remove from cart";
+        btn.classList.add("remove_from_cart");
+        // cartData.pop();
+        details.appendChild(btn);
+        // document.querySelectorAll(".add_to_cart").forEach((button) => {
+        //   button.addEventListener("click", () => {});
+        // });
+      </script>
     </div>
-</body>
+  </body>
 </html>
