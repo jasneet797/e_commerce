@@ -41,18 +41,30 @@
           const details = document.createElement("div");
           details.innerHTML = `<h3>${item.title}</h3><p>$${item.price}</p>`;
 
-          cartItem.appendChild(img);
-          cartItem.appendChild(details);
+          // cartItem.appendChild(img);
+          // cartItem.appendChild(details);
 
-          cartItemBox.appendChild(cartItem);
+          // cartItemBox.appendChild(cartItem);
+          // details.appendChild(btn);
+          // Create the remove button
+          const btn = document.createElement("button");
+          btn.textContent = "Remove from cart";
+          btn.classList.add("remove_from_cart");
+          // cartData.pop();
+          btn.addEventListener("click", () => {
+            cartItemBox.removeChild(cartItem);
+            // Remove from local storage data
+            cartData.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cartData));
+          });
+            details.appendChild(btn);
+            cartItem.appendChild(img);
+            cartItem.appendChild(details);
+
+            cartItemBox.appendChild(cartItem);
+     
         });
-        //Remove from cart functionality
-        // Create the remove button
-        const btn = document.createElement("button");
-        btn.textContent = "Remove from cart";
-        btn.classList.add("remove_from_cart");
-        // cartData.pop();
-        details.appendChild(btn);
+
         // document.querySelectorAll(".add_to_cart").forEach((button) => {
         //   button.addEventListener("click", () => {});
         // });
