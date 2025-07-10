@@ -40,6 +40,16 @@
           img.classList.add("cart-img");
           const details = document.createElement("div");
           details.innerHTML = `<h3>${item.title}</h3><p>$${item.price}</p>`;
+          //Quantity
+          const quantityWrapper=document.createElement("div");
+          const quantity=document.querySelector("h2");
+          quantityWrapper.style.marginTop="10px";
+          quantityWrapper.innerHTML=`
+          <button class="decrease">-</button>
+          <span class="quantity">${quantity}</span>
+          <button class="increase">+</button>
+          `;
+
 
           // cartItem.appendChild(img);
           // cartItem.appendChild(details);
@@ -56,8 +66,9 @@
             // Remove from local storage data
             cartData.splice(index, 1);
             localStorage.setItem("cart", JSON.stringify(cartData));
-          });
+          });3
             details.appendChild(btn);
+            details.appendChild(quantityWrapper);
             cartItem.appendChild(img);
             cartItem.appendChild(details);
 
